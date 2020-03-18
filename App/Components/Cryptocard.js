@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import PropTypes from 'prop-types';
 import { RefreshControl,View, Text ,FlatList,Image,ActivityIndicator} from 'react-native'
 import styles from './Styles/CryptocardStyle'
-import {Card,FastImage,scale,Icon,Colors,Fonts,moment} from '../common'
+import {Card,FastImage,scale,Icon,Colors,Fonts,moment,Button} from '../common'
 
 
 export default class Cryptocard extends Component {
@@ -69,6 +69,16 @@ export default class Cryptocard extends Component {
                   </View>
                 </View>
                </View>
+               <View
+               style={[Fonts.style.justifyAlignCenter,Fonts.style.flex1,styles.borderStyle,{}]}>
+                
+                <Button 
+                onPress={()=>{this.props.navigateMethod("DetailsScreen",{title:item.name})}}
+                style={{marginTop:scale(10),backgroundColor:Colors.laleRed,paddingHorizontal:scale(10)}}>
+                  <Text style={{color:Colors.white}}>View Details</Text>
+                </Button>
+                 </View>
+              
           </Card>
           )
         

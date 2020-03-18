@@ -37,7 +37,7 @@ class HomeScreen extends Component {
     this.props.getHome({start:this.state.start,limit :10})
   }
  
-   componentWillReceiveProps(nextProps) {
+   UNSAFE_componentWillReceiveProps(nextProps) {
     if ( !nextProps.home.fetching) {
       this.setState({ fetching:  nextProps.home.fetching ,data :this.state.data.concat(nextProps.home.payload) }) // <- this is setState equivalent
     }
@@ -46,6 +46,12 @@ class HomeScreen extends Component {
   loadMore=()=>{
     console.log("loadmore");
     this.setState({start : this.state.start + 1},()=>{this.getData()})
+  }
+
+  navigateMethod = (screenName,param = {})=>{
+    console.log(screenName,"screenName");
+    const {navigation} = this.props;
+    navigation.navigate(screenName,param)
   }
 
   render () {
@@ -71,6 +77,7 @@ class HomeScreen extends Component {
                     fetching={this.state.fetching}
                     refreshing={this.state.refreshing} 
                     getData= {this.getData} 
+                    navigateMethod={this.navigateMethod}
                     CryptocardData={this.state.data}/>
                   </View>
               </Content>

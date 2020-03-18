@@ -8,12 +8,14 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 
 import HomeScreen from '../Containers/HomeScreen'
+import DetailsScreen from '../Containers/DetailsScreen'
 
 
 
 // Manifest of possible screens
 const PrimaryNav = createStackNavigator({
-  HomeScreen :{screen:HomeScreen}
+  HomeScreen :{screen:HomeScreen},
+  DetailsScreen:{screen:DetailsScreen}
 },
 {
   defaultNavigationOptions: {

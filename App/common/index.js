@@ -11,12 +11,19 @@ import {
   Toast,
   Root,
   Header,
-  Body,Title
+  Body,
+  Title,
+  Button,
+  Left,
+  Right
    } from "native-base";
 export {
     SplashScreen,
+    Button,
     FastImage,
     scale,
     Icon,
+    Left,
+    Right,
     ApplicationStyles,Colors,Fonts,moment,Header,Container,Content,Toast,Root,Card,Body,Title
 }
